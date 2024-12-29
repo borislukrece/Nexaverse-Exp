@@ -131,7 +131,8 @@
             <section data-scroll-section class="w-full min-h-[90vh] relative">
                 <div
                     class="w-full flex bg-building">
-                    <div
+                    <div data-scroll data-scroll-speed="0.5"
+                        data-scroll-direction="vertical"
                         class="w-full h-[6rem] md:h-[5rem] lg:h-[4rem] backdrop absolute -top-10 md:-top-5 lg:top-0 left-0 bg-[url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmYzk3MDAiPjxwYXRoIGQ9Ik05NzguODEgMTIyLjI1TDAgMGgxMjgwbC0yNjIuMSAxMTYuMjZhNzMuMjkgNzMuMjkgMCAwIDEtMzkuMDkgNS45OXoiIGZpbGwtb3BhY2l0eT0iLjUiLz48cGF0aCBkPSJNOTgzLjE5IDk1LjIzTDAgMGgxMjgwbC0yNjYgOTEuNTJhNzIuNTggNzIuNTggMCAwIDEtMzAuODEgMy43MXoiLz48L2c+PC9zdmc+)] bg-cover lg:bg-contain bg-no-repeat bg-bottom bg-[100%] opacity-95">
                     </div>
 
@@ -823,6 +824,25 @@
                 </div>
             </section>
         </main>
+
+        <div class="loader-container bg-black bg-cities-whithout-clip">
+            <div class="loader-content">
+                <div>
+                    <div class="loader-logo">
+                        <div class="loader-logo-text logo-text">
+                            Rem id voluptatibus
+                        </div>
+                        <div class="logo-img">
+                            <img src="assets/img/logo.jpeg" width="40"
+                                height="40" alt="Logo">
+                        </div>
+                    </div>
+                    <div class="flex-element">
+                        <span class="loader"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="assets/jquery-3.7.1.min.js"></script>

@@ -48,6 +48,16 @@ body {
     }
 }
 
+.bg-cities-whithout-clip {
+    background: url("../assets/img/cities.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-backdrop-filter: blur(4px);
+    -moz-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
 .bg-cities {
     background: url("../assets/img/cities.jpg");
     background-size: cover;
@@ -112,5 +122,110 @@ body {
         -webkit-transform: scale(1.02);
         -moz-transform: scale(1.02);
         transform: scale(1.02);
+    }
+}
+
+.loader-container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999999;
+}
+
+.loader-content {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-logo {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.loader-logo-text {
+    font-family: Creepster;
+    letter-spacing: 0.1em;
+}
+
+.loader-logo .logo-img img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+}
+
+.flex-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite
+}
+
+.loader::before, .loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite;
+    -webkit-animation: prixClipFix 2s linear infinite;
+}
+
+.loader::after {
+    border-color: #000000;
+    animation: prixClipFix 2s linear infinite, rotate_ 0.5s linear infinite reverse;
+    inset: 6px;
+    -webkit-animation: prixClipFix 2s linear infinite, rotate_ 0.5s linear infinite reverse;
+}
+
+@keyframes rotate_ {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+    }
+
+    25% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+    }
+
+    75% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+    }
+
+    100% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
     }
 }

@@ -1,3 +1,7 @@
+$(window).on("load", function () {
+  $(".loader-container").fadeOut("slow");
+});
+
 $(document).ready(function () {
   let scroll = null;
 
