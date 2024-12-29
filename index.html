@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nexaverse</title>
+        <link href="assets/fonts.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/styles.css">
+        <script src="assets/locomotive-scroll.min.js"></script>
+        <link rel="stylesheet" href="assets/locomotive-scroll.css">
+        <script defer src="assets/alpinejs.min.js"></script>
+    </head>
+
+    <body>
+        <main id="main" data-scroll-container
+            class="w-full h-auto bg-black relative">
+            <header data-scroll-section
+                class="w-full h-[10vh] relative">
+                <div data-scroll data-scroll-sticky data-scroll-target="#main"
+                    class="w-full h-full bg-black backdrop border-b-[1px] border-b-[rgba(255,255,255,0.3)] flex items-center">
+                    <div
+                        class="w-full h-full flex items-center justify-between text-white">
+                        <div data-scroll data-scroll-speed="-4"
+                            data-scroll-direction="horizontal"
+                            class="uppercase font-bold mx-4 flex items-center relative">
+                            <div
+                                class="font-[Creepster] tracking-widest logo-text">Rem
+                                id voluptatibus</div>
+                            <div class="logo-img">
+                                <img src="assets/img/logo.jpeg" alt
+                                    class="w-10 h-10 object-cover">
+                            </div>
+                        </div>
+
+                        <div
+                            class="h-full flex items-center justify-center nav-links">
+                            <nav
+                                class="hidden lg:flex h-full items-center justify-center">
+                                <ul
+                                    class="h-full grid gap-4 grid-cols-4">
+                                    <li class="active-link-nav"><a
+                                            href="#">Aspernatur</a></li>
+                                    <li><a href="#">Deserunt</a></li>
+                                    <li><a href="#">Adipisicing</a></li>
+                                    <li><a href="#">Consectetur</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <div class="mx-4 lg:hidden">
+                                <div x-data="{ isActive: false }"
+                                    class="relative z-[999999]">
+                                    <div
+                                        class="inline-flex items-center overflow-hidden rounded-md bg-slate-100/[0.2]">
+                                        <button
+                                            x-on:click="isActive = !isActive"
+                                            class="h-full p-2 text-white">
+                                            <span
+                                                class="sr-only">Menu</span>
+                                            <svg class="w-6 h-6"
+                                                fill="currentColor"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 512 512"><path
+                                                    d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" /></svg>
+                                        </button>
+                                    </div>
+
+                                    <div
+                                        class="absolute end-0 z-[999999] mt-2 w-56 rounded-md ring ring-gray-100 bg-black/[0.3] backdrop-blur shadow-lg"
+                                        x-cloak
+                                        x-transition
+                                        x-show="isActive"
+                                        x-on:click.away="isActive = false"
+                                        x-on:keydown.escape.window="isActive = false"
+                                        style="display: none;">
+                                        <div class="p-2">
+                                            <nav class="w-full">
+                                                <ul
+                                                    class="h-full grid gap-4">
+                                                    <li
+                                                        class="active-link-nav">
+                                                        <a
+                                                            href="#">Aspernatur</a>
+                                                    </li>
+                                                    <li>
+                                                        <a
+                                                            href="#">Deserunt</a>
+                                                    </li>
+                                                    <li>
+                                                        <a
+                                                            href="#">Adipisicing</a>
+                                                    </li>
+                                                    <li>
+                                                        <a
+                                                            href="#">Consectetur</a>
+                                                    </li>
+                                                </ul>
+
+                                                <div
+                                                    class="w-full h-[1px] bg-slate-200/[0.4]"></div>
+
+                                                <button type="button"
+                                                    class="p-3 my-2 border-2 uppercase font-bold rounded-md transition-all ease-in-out delay-150 border-[rgba(255,255,255,0.6)] hover:bg-white hover:text-black">
+                                                    <div
+                                                        class="truncate text-sm md:text-xl">Quis
+                                                        quam</div>
+                                                </button>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-scroll data-scroll-speed="2"
+                                data-scroll-direction="horizontal"
+                                class="px-4 my-2 hidden lg:block">
+                                <button type="button"
+                                    class="p-3 border-2 uppercase font-bold rounded-md transition-all ease-in-out delay-150 border-[rgba(255,255,255,0.6)] hover:bg-white hover:text-black">
+                                    <div
+                                        class="truncate text-sm">Quis
+                                        quam</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section data-scroll-section class="w-full min-h-[90vh] relative">
+                <div
+                    class="w-full flex bg-building">
+                    <div
+                        class="w-full h-[6rem] md:h-[5rem] lg:h-[4rem] backdrop absolute -top-10 md:-top-5 lg:top-0 left-0 bg-[url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmYzk3MDAiPjxwYXRoIGQ9Ik05NzguODEgMTIyLjI1TDAgMGgxMjgwbC0yNjIuMSAxMTYuMjZhNzMuMjkgNzMuMjkgMCAwIDEtMzkuMDkgNS45OXoiIGZpbGwtb3BhY2l0eT0iLjUiLz48cGF0aCBkPSJNOTgzLjE5IDk1LjIzTDAgMGgxMjgwbC0yNjYgOTEuNTJhNzIuNTggNzIuNTggMCAwIDEtMzAuODEgMy43MXoiLz48L2c+PC9zdmc+)] bg-cover lg:bg-contain bg-no-repeat bg-bottom bg-[100%] opacity-95">
+                    </div>
+
+                    <div class="w-full h-full content-bg-building">
+                        <div class="w-full h-full flex items-center">
+                            <div data-scroll data-scroll-speed="10"
+                                data-scroll-direction="vertical"
+                                class="max-w-lg text-white px-4 lg:px-20 py-4">
+                                <div
+                                    class="max-w-sm h-auto rounded-lg overflow-hidden">
+                                    <img src="assets/img/arm.jpeg" alt
+                                        class="w-full h-auto object-cover">
+                                </div>
+
+                                <div
+                                    class="w-auto">
+                                    <p
+                                        class="font-bold text-2xl my-4 tracking-widest font-[Lalezar]">
+                                        Lorem ipsum dolor sit amet
+                                        consectetur
+                                        adipisicing elit.
+                                    </p>
+                                    <p class="py-4">
+                                        Deserunt laudantium dolores, in
+                                        voluptatum ut laborum dolorem
+                                        aperiam
+                                        ipsa
+                                        aspernatur.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section
+                class="w-full bg-cities relative">
+                <div
+                    class="w-full bg-black/50 text-white backdrop-blur-sm">
+                    <div class="w-full grid grid-cols-1 lg:grid-cols-2">
+                        <div data-scroll data-scroll-speed="10"
+                            data-scroll-direction="horizontal"
+                            class="w-full h-full px-4 py-2 flex items-center justify-center">
+                            <div class="max-w-md h-full flex items-center">
+                                <div
+                                    class="w-full h-auto rounded-lg overflow-hidden">
+                                    <img src="assets/img/girl.jpeg" alt
+                                        class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="max-w-md h-full">
+                            <div class="w-full h-full flex items-center">
+                                <div class="p-4">
+                                    <div class="my-6">
+                                        <img src="assets/img/logo.jpeg" alt
+                                            class="w-10 h-10 rounded-full">
+                                    </div>
+                                    <p class="font-bold text-3xl">
+                                        Vitae mollitia nobis ad eaque sint,
+                                        fugiat atque
+                                    </p>
+                                    <p class="py-6">
+                                        Quibusdam nemo minus dolore sint
+                                        voluptatibus doloribus velit
+                                        incidunt labore
+                                        iste
+                                        rem similique nobis, hic quam fuga
+                                        corporis quas in reiciendis ducimus.
+                                        Lorem
+                                        ipsum
+                                        dolor, sit amet consectetur
+                                        adipisicing elit. Sunt alias cum
+                                        quam tenetur nobis
+                                        fugit rerum, vero id voluptatum,
+                                        iusto expedita eum dolorem, quidem
+                                        architecto
+                                        ipsam. Ex obcaecati assumenda sequi.
+                                    </p>
+                                    <p class="py-6">
+                                        Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit. Iste
+                                        obcaecati at
+                                        aliquam
+                                        unde quisquam architecto hic
+                                        reiciendis dolorem. Suscipit maxime
+                                        veritatis
+                                        quibusdam
+                                        rem ad sunt! Sequi nihil soluta illo
+                                        odit?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section
+                class="w-full bg-cities relative">
+                <div
+                    class="w-full bg-black/50 text-white backdrop-blur-sm">
+                    <div class="w-full grid grid-cols-1 lg:grid-cols-2">
+                        <div
+                            class="w-full h-full flex items-center justify-center">
+                            <div class="max-w-md h-full flex items-center">
+                                <div class="p-4">
+                                    <div class="my-6">
+                                        <img src="assets/img/logo.jpeg" alt
+                                            class="w-10 h-10 rounded-full">
+                                    </div>
+                                    <p class="font-bold text-3xl">
+                                        Vitae mollitia nobis ad eaque sint,
+                                        fugiat atque
+                                    </p>
+                                    <p class="py-6">
+                                        Quibusdam nemo minus dolore sint
+                                        voluptatibus doloribus velit
+                                        incidunt labore
+                                        iste
+                                        rem similique nobis, hic quam fuga
+                                        corporis quas in reiciendis ducimus.
+                                        Lorem
+                                        ipsum
+                                        dolor, sit amet consectetur
+                                        adipisicing elit. Sunt alias cum
+                                        quam tenetur nobis
+                                        fugit rerum, vero id voluptatum,
+                                        iusto expedita eum dolorem, quidem
+                                        architecto
+                                        ipsam. Ex obcaecati assumenda sequi.
+                                    </p>
+                                    <p class="py-6">
+                                        Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit. Iste
+                                        obcaecati at
+                                        aliquam
+                                        unde quisquam architecto hic
+                                        reiciendis dolorem. Suscipit maxime
+                                        veritatis
+                                        quibusdam
+                                        rem ad sunt! Sequi nihil soluta illo
+                                        odit?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-scroll data-scroll-speed="10"
+                            data-scroll-direction="vertical"
+                            class="w-full h-full flex items-center justify-center">
+                            <div class="h-full flex items-center">
+                                <div
+                                    class="max-w-md h-auto lg:rounded-lg overflow-hidden">
+                                    <img src="assets/img/person.jpeg" alt
+                                        class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section
+                class="w-full bg-cities relative">
+                <div
+                    class="w-full min-h-[90vh] bg-black/95 text-white backdrop-blur-sm flex items-center justify-center">
+                    <div
+                        class="w-full flex items-center justify-center">
+                        <div class="w-full">
+                            <div
+                                class="max-w-6xl mx-auto px-4 font-bold text-3xl">
+                                Harum dolore
+                            </div>
+
+                            <div
+                                class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-2 px-4 my-4 mt-6 el-img">
+                                <div data-scroll data-scroll-speed="10"
+                                    data-scroll-direction="vertical"
+                                    class="w-full h-[20vh] md:h-[25vh] lg:h-[50vh] bg-[#b64676] px-4 rounded-lg hover:ring hover:ring-[white] relative max-lg:overflow-hidden">
+                                    <div
+                                        class="w-full h-[64vh] overflow-hidden absolute top-[-10vh] lg:top-[-14vh] left-0 rounded-lg">
+                                        <img src="assets/img/marge.png" alt
+                                            class="w-full">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-[2rem] font-bold text-xl">
+                                        Empora dolorum
+                                    </div>
+                                </div>
+                                <div data-scroll data-scroll-speed="10"
+                                    data-scroll-direction="vertical"
+                                    class="w-full h-[20vh] md:h-[25vh] lg:h-[50vh] bg-[#4678B6] px-4 rounded-lg hover:ring hover:ring-[white] relative max-lg:overflow-hidden">
+                                    <div
+                                        class="w-full h-[64vh] overflow-hidden absolute top-[-10vh] lg:top-[-14vh] left-0 rounded-lg">
+                                        <img src="assets/img/marge.png" alt
+                                            class="w-full">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-[2rem] font-bold text-xl">
+                                        Velit, nam praesentium!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section
+                class="w-full bg-cities relative">
+                <div
+                    class="w-full bg-black/95 text-white backdrop-blur-sm">
+                    <div class="w-full grid grid-cols-1 lg:grid-cols-2">
+                        <div data-scroll data-scroll-speed="10"
+                            data-scroll-direction="vertical"
+                            class="w-full h-full px-4 flex items-center justify-center">
+                            <div class="max-w-md h-full flex items-center">
+                                <div
+                                    class="w-full h-auto rounded-lg overflow-hidden">
+                                    <img src="assets/img/gamer.jpeg" alt
+                                        class="w-full h-auto object-center">
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full h-full flex items-center justify-center">
+                            <div class="max-w-lg h-full flex items-center">
+                                <div class="p-4">
+                                    <p class="font-bold text-3xl">
+                                        Vitae mollitia nobis ad
+                                    </p>
+                                    <p class="py-6 text-lg">
+                                        Quibusdam nemo minus dolore sint
+                                        voluptatibus doloribus velit
+                                        incidunt labore
+                                        iste
+                                        rem similique nobis, hic quam fuga
+                                        corporis quas in reiciendis ducimus.
+                                        Lorem
+                                        ipsum
+                                        dolor, sit amet consectetur
+                                        adipisicing elit. Sunt alias cum
+                                        quam tenetur nobis
+                                        fugit rerum.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section
+                class="w-full bg-cities relative">
+                <div
+                    class="w-full bg-black/95 text-white backdrop-blur-sm">
+                    <div class="w-full grid grid-cols-1 lg:grid-cols-2">
+                        <div data-scroll data-scroll-speed="5"
+                            data-scroll-direction="horizontal"
+                            class="w-full h-full flex items-center justify-center">
+                            <div class="max-w-lg h-full flex items-center">
+                                <div class="p-4">
+                                    <p
+                                        class="font-bold font-[Lalezar] tracking-widest text-3xl">
+                                        Pariatur omnis culpa porro
+                                    </p>
+                                    <p class="py-6 text-lg">
+                                        Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit. Saepe
+                                        quo accusamus
+                                        ratione quis, tempore voluptate ex
+                                        iure sed, eveniet, eius animi
+                                        pariatur? Est
+                                        rerum asperiores veniam officiis
+                                        veritatis deleniti doloremque.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-scroll data-scroll-speed="10"
+                            data-scroll-direction="horizontal"
+                            class="w-full h-full flex items-center justify-center">
+                            <div class="h-full flex items-center">
+                                <div
+                                    class="max-w-md h-full lg:rounded-lg overflow-hidden">
+                                    <img src="assets/img/characters.jpeg"
+                                        alt
+                                        class="w-full h-auto object-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section
+                class="w-full bg-cities relative">
+                <div
+                    class="w-full bg-black/95 text-white backdrop-blur-sm">
+                    <div class="w-full py-4 grid grid-cols-1 lg:grid-cols-2">
+                        <div
+                            class="w-full h-full px-4 flex items-center justify-center">
+                            <div class="h-full flex items-center">
+                                <div
+                                    class="max-w-md h-auto rounded-lg overflow-hidden">
+                                    <img src="assets/img/img-1.jpeg" alt
+                                        class="w-full h-auto object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div data-scroll data-scroll-speed="10"
+                            data-scroll-direction="vertical"
+                            class="w-full h-full flex items-center justify-center">
+                            <div class="max-w-md h-full flex items-center">
+                                <div class="p-4">
+                                    <p class="font-bold text-3xl">
+                                        Vitae mollitia nobis ad
+                                    </p>
+                                    <p class="py-6 text-lg">
+                                        Quibusdam nemo minus dolore sint
+                                        voluptatibus doloribus velit
+                                        incidunt labore
+                                        iste
+                                        rem similique nobis, hic quam fuga
+                                        corporis quas in reiciendis ducimus.
+                                        Lorem
+                                        ipsum
+                                        dolor, sit amet consectetur
+                                        adipisicing elit. Sunt alias cum
+                                        quam tenetur nobis
+                                        fugit rerum.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section
+                class="w-full bg-cities relative">
+                <div
+                    class="w-full bg-black/70 text-white backdrop-blur-sm">
+                    <div class="w-full py-4 grid grid-cols-1 lg:grid-cols-2">
+                        <div data-scroll data-scroll-speed="-10"
+                            data-scroll-direction="horizontal"
+                            class="w-full h-full flex items-center justify-center">
+                            <div class="max-w-md h-full flex items-center">
+                                <div class="p-4">
+                                    <p
+                                        class="font-bold tracking-widest text-3xl">
+                                        doloribus sunt a autem, placeat
+                                    </p>
+                                    <p class="py-6 text-lg">
+                                        Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit. Saepe
+                                        quo accusamus
+                                        ratione quis, tempore voluptate ex
+                                        iure sed, eveniet, eius animi
+                                        pariatur? Est
+                                        rerum asperiores veniam officiis
+                                        veritatis deleniti doloremque.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-scroll data-scroll-speed="-5"
+                            data-scroll-direction="horizontal"
+                            class="w-full h-full flex items-center justify-center">
+                            <div class="h-full flex items-center">
+                                <div
+                                    class="max-w-md h-auto lg:rounded-lg overflow-hidden">
+                                    <img src="assets/img/super-car.jpeg" alt
+                                        class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section class="w-full bg-cities relative">
+                <div class="w-full">
+                    <div
+                        class="w-full h-full bg-black/95 text-white backdrop-blur-sm">
+                        <div
+                            class="w-full h-full flex items-center justify-center">
+                            <div>
+                                <div class="px-4 font-bold text-3xl">
+                                    Minus ex iure
+                                </div>
+
+                                <div class="w-full px-4 my-4 mt-6 el-img">
+                                    <div
+                                        class="max-w-3xl h-[10rem] md:h-[12rem] lg:h-[50vh] mx-auto bg-[#b64676] mx-4 overflow-hidden rounded-lg hover:ring hover:ring-[white] relative">
+                                        <div
+                                            class="w-full h-full overflow-hidden relative">
+                                            <div class="w-full h-full">
+                                                <img src="assets/img/cities.jpg"
+                                                    alt
+                                                    class="w-full h-auto object-cover">
+                                                <div
+                                                    class="w-full flex justify-center">
+                                                    <div data-scroll
+                                                        data-scroll-speed="10"
+                                                        data-scroll-direction="vertical"
+                                                        class="w-[70%] h-auto absolute top-[3vh] rounded-lg overflow-hidden">
+                                                        <img
+                                                            src="assets/img/arm.jpeg"
+                                                            alt
+                                                            class="w-full h-auto object-cover">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-full h-full bg-black/50 flex justify-center text-white">
+                        <div class="w-full px-4 py-4">
+                            <div class="font-bold text-3xl">
+                                Consectetur adipisicing elit
+                            </div>
+                            <div class="my-4">
+                                Possimus? Officiis, <span class="font-bold">Quis
+                                    Beatae</span>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                <img src="assets/img/logo-ps5.svg" alt
+                                    class="mr-4">
+                                <img src="assets/img/logo-ps4.svg" alt
+                                    class="mr-4">
+                                <img src="assets/img/logo-xbox.svg" alt
+                                    class="mr-4">
+                                <img src="assets/img/logo-pc.svg" alt
+                                    class="mr-4">
+                            </div>
+                            <div class="my-4">
+                                <button type="button"
+                                    class="p-4 bg-black/70 border-[1px] border-[rgba(255,255,255,0.4)] rounded-md">
+                                    Nihil dolore atque harum modi
+                                </button>
+                            </div>
+                            <div class="my-4">
+                                <button type="button"
+                                    class="max-w-3xl p-4 bg-black/95 text-bold text-xl border-[1px] border-[rgba(255,255,255,0.4)] hover:bg-white hover:text-black rounded-md transition-all duration-150">
+                                    Doloremque rem dolor
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section
+                class="w-full bg-cities relative">
+                <div
+                    class="w-full bg-black/95 text-white backdrop-blur-sm">
+                    <div class="w-full h-full flex">
+                        <footer
+                            class="w-full h-full lg:grid lg:grid-cols-5">
+                            <div
+                                class="relative block h-32 lg:col-span-2 lg:h-full">
+                                <img src="assets/img/girl-support.jpeg" alt
+                                    class="absolute inset-0 h-full w-full object-cover" />
+                            </div>
+
+                            <div
+                                class="px-4 py-16 sm:px-6 lg:col-span-3 lg:px-8">
+                                <div
+                                    class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                                    <div>
+                                        <p>
+                                            <span
+                                                class="text-xs uppercase tracking-wide text-gray-500">
+                                                Call us
+                                            </span>
+
+                                            <a href="#"
+                                                class="block text-2xl font-medium text-gray-600 hover:opacity-75 sm:text-3xl">
+                                                +1 (124) 456-6789
+                                            </a>
+                                        </p>
+
+                                        <ul
+                                            class="mt-8 space-y-1 text-sm text-gray-400">
+                                            <li>Modi iusto nulla</li>
+                                            <li>Esse, assumenda</li>
+                                        </ul>
+
+                                        <ul class="mt-8 flex gap-6">
+                                            <li>
+                                                <a href="/" rel="noreferrer"
+                                                    target="_blank"
+                                                    class="text-gray-400 transition hover:opacity-75">
+                                                    <span
+                                                        class="sr-only">Facebook</span>
+
+                                                    <svg class="h-6 w-6"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                        aria-hidden="true">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/" rel="noreferrer"
+                                                    target="_blank"
+                                                    class="text-gray-400 transition hover:opacity-75">
+                                                    <span
+                                                        class="sr-only">Instagram</span>
+
+                                                    <svg class="h-6 w-6"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                        aria-hidden="true">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/" rel="noreferrer"
+                                                    target="_blank"
+                                                    class="text-gray-400 transition hover:opacity-75">
+                                                    <span
+                                                        class="sr-only">Twitter</span>
+
+                                                    <svg class="h-6 w-6"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                        aria-hidden="true">
+                                                        <path
+                                                            d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/" rel="noreferrer"
+                                                    target="_blank"
+                                                    class="text-gray-400 transition hover:opacity-75">
+                                                    <span
+                                                        class="sr-only">GitHub</span>
+
+                                                    <svg class="h-6 w-6"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                        aria-hidden="true">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div
+                                        class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                        <div>
+                                            <p
+                                                class="font-medium text-gray-600">Dolorum
+                                            </p>
+
+                                            <ul
+                                                class="mt-6 space-y-4 text-sm">
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-gray-400 transition hover:opacity-75">
+                                                        Rerum Sequi
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-gray-400 transition hover:opacity-75">
+                                                        Culpa Totam
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-gray-400 transition hover:opacity-75">
+                                                        Omnis Facilis
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-gray-400 transition hover:opacity-75">
+                                                        Nam Eveniet
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-gray-400 transition hover:opacity-75">
+                                                        Voluptates Porro
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <p
+                                                class="font-medium text-gray-600">Recusandae</p>
+
+                                            <ul
+                                                class="mt-6 space-y-4 text-sm">
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-gray-400 transition hover:opacity-75">
+                                                        voluptates
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-gray-400 transition hover:opacity-75">
+                                                        Dolor sit Amet
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-gray-400 transition hover:opacity-75">
+                                                        Nostrum Molestiae
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="mt-12 border-t border-gray-100 pt-12">
+                                    <div
+                                        class="sm:flex sm:items-center sm:justify-between">
+                                        <ul
+                                            class="flex flex-wrap gap-4 text-xs">
+                                            <li>
+                                                <a href="#"
+                                                    class="text-gray-500 transition hover:opacity-75">
+                                                    Terms & Conditions
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#"
+                                                    class="text-gray-500 transition hover:opacity-75">
+                                                    Privacy Policy
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#"
+                                                    class="text-gray-500 transition hover:opacity-75">
+                                                    Cookies
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <p
+                                            class="mt-8 text-xs text-gray-500 sm:mt-0">
+                                            &copy; 2022. Rem id
+                                            voluptatibus. All rights
+                                            reserved.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="assets/jquery-3.7.1.min.js"></script>
+        <script src="assets/main.js"></script>
+    </body>
+
+</html>

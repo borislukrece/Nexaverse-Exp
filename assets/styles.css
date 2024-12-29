@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+body {
+    width: 100%;
+    background: black;
+}
+
+.logo-text, .logo-img {
+    cursor: pointer;
+}
+
+.logo-img:hover {
+    animation: animLT 0.8s;
+}
+
+@keyframes animLT {
+    to {
+        opacity: 0;
+        transition: filter .1s;
+    }
+}
+
+.bg-building {
+    background: url("../assets/img/building.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    animation: animS1 0.5s;
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+}
+
+@keyframes animS1 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.bg-cities {
+    background: url("../assets/img/cities.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-backdrop-filter: blur(4px);
+    -moz-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+}
+
+.nav-links li {
+    height: 100%;
+    margin: 0 1rem;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition-duration: 150ms;
+}
+
+.nav-links li a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links li:hover {
+    border-bottom: solid 3px white;
+}
+
+.active-link-nav {
+    border-bottom: solid 4px white;
+}
+
+.content-section1 {
+    background: linear-gradient(90deg, rgba(0, 0, 0, .85), rgba(0, 0, 0, .7) 35%, transparent 65%);
+}
+
+.el-img img {
+    transition: all 0.5s ease;
+}
+
+.el-img img:hover {
+    transition: all 0.5s ease;
+    animation: elImg 0.5s;
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+@keyframes elImg {
+    from {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    to {
+        -webkit-transform: scale(1.02);
+        -moz-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+}
